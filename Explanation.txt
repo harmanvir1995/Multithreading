@@ -1,0 +1,20 @@
+Submitted By:
+        HARMANVIR SINGH (40019114)
+        HARINDER PARTAP SINGH (40076200)
+
+I have recorded 3 outputs for this program, they all have different execution time. This depends 
+upon the cpu schedueling algorithms implemented by the underlined operating system, the number of 
+process running at that particular time, number of cpus, cache of cpu and many other factors.
+
+When we change the buffer size from 10 to 20, we do not really see big difference in the executing time. 
+Although the execution time for the threads decreased a little as compared to the 10 threads. This might be because
+of the fact that we have to yield for the less time. Here we are trying to force synchronization by using 
+while loops and Thread.yield(). There was another observation, when the buffer size is maximum then sending time
+for the sending thread is about 1 millisecond, that is the data is sent in one shot, sending thread did not really has
+to yield the way when the buffer is full. Similarly if we apply the same concept to the buffer size of 10 and 20, 
+the sending thread when the size is 10, has to yield the way to other process almost 7 times. However when size is 20
+then the Thread has to yield the way for 3 times. So it takes time. 
+    There was another observation when the size of the buffer was changed to 1. It took almost triple the time to execute 
+these threads which was very remarkable. 
+    One another reason for this could be context switch, while yielding the way to the another threads.
+
